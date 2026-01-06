@@ -1,0 +1,119 @@
+﻿<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Аптека онлайн</title>
+    <meta name="description" content="Контакты для связи с аптекой" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="/images/pills.png">
+</head>
+<body>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="main.html">Dysido </a></h1>
+            </div>
+            <p class="prepiska"><a href="main.html">Аптека</a></p>
+            <div id="menu">
+                <ul id="node">
+                    <!--<li><a href="main.html" accesskey="1" title="">Главная</a></li>-->
+                    <li><a href="catalog.html" accesskey="2" title="">Каталог</a></li>
+                    <li><a  href="Basket.html" accesskey="2" title="">Корзина </a><font id="countOfBasket"></font></li>
+                    <li><a href="contacts.html" accesskey="3" title="">Контакты</a></li>
+                    <li><a href="#openModal" accesskey="4" title="">Вход</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">ВХОД</h3>
+                    <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <form id="form1" action="DB.html">
+                            <div class="text-field">
+                                <label class="text-field__label1" for="login">Логин</label>
+                                <input class="text-field__input1" type="email" name="login" id="login" placeholder="Login"  value="" required >
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field__label1" for="login">Пароль</label>
+                                <input class="text-field__input1" type="password" name="password" id="password" placeholder="Password"  value="" required>
+                            </div>
+                        </form>
+                            <div class="login">
+                                <button onClick="login();" type="button">Войти</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="openModal2" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" >Ваш заказ успешно оплачен</h3>
+                    <a href="catalog.html" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    <div class="text-field">
+                        <label class="text-field__label" for="review">Оцените качество сервиса</label>
+                        <input class="text-field__input" type="text" name="review" id="review" placeholder="Ваш отзыв" value="">
+                    </div>
+                    <div class="text-field">
+                        <div class="checkbox">
+                            <input type="checkbox" id="click">
+                            <label for="click" class="text">Получить чек на почту</label>
+                        </div>
+                    </div>
+                    <div class="login">
+                        <button onclick="completeBuying();" type="button">Отправить отзыв</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="max-width: 500px; margin-left: auto; margin-right: auto; padding: 15px;">
+
+        <h1 class="catalog">Оплата заказа</h1>
+
+        <form id="form"  action="#openModal2">
+            <div class="text-field1">
+                <label class="text-field__label1" for="cardname">Имя на карте<font color="red">*</font></label>
+                <input class="text-field__input1" type="text" name="cardname" placeholder="IVANOV IVAN" id="cardname" pattern="[A-Z]*?\s[A-Z]{1,}" required>
+                <div class="text-field__message1"></div>
+            </div>
+            <div class="text-field1">
+                <label class="text-field__label1" for="cardumber">Номер кредитной карты<font color="red">*</font></label>
+                <input class="text-field__input1" type="text" name="cardnumber" placeholder="1234 1234 1234 1234" id="cardnumber" pattern="[0-9]{4}?\s[0-9]{4}?\s[0-9]{4}?\s[0-9]{4}" required>
+                <div class="text-field__message1"></div>
+            </div>
+            <div class="text-field1">
+                <label class="text-field__label1" for="month">Годен месяц<font color="red">*</font></label>
+                <input class="text-field__input1" type="text" name="month" id="month" placeholder="01" pattern="[0-9]{2}" required>
+                <div class="text-field__message1"></div>
+            </div>
+            <div class="text-field1">
+                <label class="text-field__label1" for="year">Годен год<font color="red">*</font></label>
+                <input class="text-field__input1" type="text" name="year" id="year" placeholder="25" pattern="[0-9]{2}" required>
+                <div class="text-field__message1"></div>
+            </div>
+            <div class="text-field1">
+                <label class="text-field__label1" for="cvv">CVV<font color="red">*</font></label>
+                <input class="text-field__input1" type="text" name="cvv" id="cvv" placeholder="123" pattern="[0-9]{3}" required>
+                <div class="text-field__message1"></div>
+            </div>
+            <button class="inOrder"  type="submit">Оплатить заказ</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

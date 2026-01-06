@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Аптека онлайн</title>
+    <meta name="description" content="Каталог аптеки" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="/images/pills.png">
+  </head>
+  <body style='overflow-x:hidden;'>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1 ><a href="main.html">Dysido</a></h1>
+            </div>
+            <p class ="prepiska"><a href="main.html">Аптека</a></p>
+            <div id="menu">
+                <ul id="node">
+                    <!--<li><a href="main.html" accesskey="1" title="">Главная</a></li>-->
+                    <li><a href="catalog.html" accesskey="2" title="">Каталог</a></li>
+                    <li><a  href="Basket.html" accesskey="2" title="">Корзина </a><font id="countOfBasket"></font></li>
+                    <li><a href="contacts.html" accesskey="3" title="">Контакты</a></li>
+                    <li><a href="#openModal" accesskey="4" title="">Вход</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1 class="catalog">Каталог</h1>
+    <label class="search" for="login">Поиск по различным полям:</label>
+    <input class="searchInput" type="text" placeholder="Тип, название, описание" id="search-text" onkeyup="tableSearch()">
+    <div id="pharm"></div>
+  
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">ВХОД</h3>
+              <a href="#close" title="Close" class="close">×</a>
+            </div>
+            <div class="modal-body"> 
+              <div class="modal-body">
+                <form id="form" action="DB.html">
+                  <div class="text-field">
+                      <label class="text-field__label1" for="login">Логин</label>
+                      <input class="text-field__input1" type="email" name="login" id="login" placeholder="Login"  value="" required >
+                  </div>
+                  <div class="text-field">
+                      <label class="text-field__label1" for="login">Пароль</label>
+                      <input class="text-field__input1" type="password" name="password" id="password" placeholder="Password"  value="" required>
+                  </div>
+              </form>
+                  <div class="login">
+                      <button onClick="login();" type="button">Войти</button>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <script src="scripts.js"></script>
+  </body>
+</html>

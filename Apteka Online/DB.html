@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Аптека онлайн</title>
+    <meta name="description" content="Контакты для связи с аптекой" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="/images/pills.png">
+  </head>
+  <body style='overflow-x:hidden;'>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1 ><a href="main.html">Dysido </a></h1>
+            </div>
+            <p class ="prepiska"><a href="main.html">Аптека</a></p>
+            <div id="menu">
+                <ul id="node">
+                    <!--<li><a href="main.html" accesskey="1" title="">Главная</a></li>-->
+                    <li><a href="catalog.html" accesskey="2" title="">Каталог</a></li>
+                    <li><a  href="Basket.html" accesskey="2" title="">Корзина </a><font id="countOfBasket"></font></li>
+                    <li><a href="contacts.html" accesskey="3" title="">Контакты</a></li>
+                    <li><a href="DB.html" accesskey="3" title="">База данных</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1 class="catalog">База данных</h1>
+    <label class="search" for="login">Сортировать по дате:</label>
+    <button class="sort" onClick="sortByDate()" type="submit">Сортировать</button>
+    
+    <form id="form" action="#" novalidate>
+      <p class="search" >Добавить лекарство:
+      <input class="text-field__inDB" type="text" name="type" id="type" required placeholder="Тип" value="" >
+      <input class="text-field__inDB" type="text" name="namep" id="namep" required placeholder="Название" value="" >
+      <input class="text-field__inDB" type="text" name="desc" id="desc" required placeholder="Описание" value="" >
+      <input class="text-field__inDB" type="text" name="price" id="price" required placeholder="Цена" value="" >
+      <input class="text-field__inDB" type="date" name="date" id="date" required placeholder="Дата" value="" >
+      <input class="text-field__inDB" type="number" name="date" id="count" required placeholder="Количество" value="" >
+      <button class="sort" onClick="addEl()" type="button">Добавить</button></p>
+    </form>
+    
+    <div id="pharmDB"></div>
+    
+    <script src="scripts.js"></script>
+  </body>
+</html>
